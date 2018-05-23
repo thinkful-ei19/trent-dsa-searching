@@ -6,8 +6,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <InputField title={'Linear Search'}/><br/>
-        <InputField title={'Binary Search'}/>
+        <InputField title={'Linear Search'} name={'linear-search'}/><br/>
+        <InputField title={'Binary Search'} name={'binary-search'}/>
       </div>
     );
   }

@@ -15,7 +15,7 @@ export default class InputField extends React.Component {
     for (let i = 0; i< arr.length; i++) {
         operations++;
         if (arr[i] === val) {
-          displayMsg = `Index of Number: ${i}`
+          displayMsg = i;
           break;
         }
     }
@@ -28,6 +28,10 @@ export default class InputField extends React.Component {
     });
   }
 
+  binarySearch(arr,value, start, end) {
+
+  }
+
 //   binarySearch() {
 
 //   }
@@ -37,16 +41,15 @@ export default class InputField extends React.Component {
     return (
         <form onSubmit={event => {
             event.preventDefault();
-            const inputValue = event.target.this.props.title.value;
-            console.log(inputValue);
-            // this.linearSearch(array, inputValue);
-            event.target.this.props.title.value = '';
+            const inputValue = Number(event.target.search.value);
+            this.linearSearch(array, inputValue);
+            event.target.search.value = '';
         }}>
-            <label for={this.props.title}>{this.props.title}</label><br/>
-            <input type="number" name={this.props.title} placeholder="number" />
-            <button>Submit</button>
-            {this.state.operations}
-            {this.state.displayMsg}
+            <label htmlFor={this.props.name}>{this.props.title}</label><br/>
+            <input type="number" name='search' placeholder="number" />
+            <button>Submit</button><br/>
+            Operations:{this.state.operations}<br/>
+            Index:{this.state.displayMsg}
         </form>
     );
   }
